@@ -1,1 +1,16 @@
+$font-family-main: "Inter", sans-serif;
+$background-color-dark: #282e2f;
+$background-color-bright: #282e2f;
+$font-color-standard: #eeeeee;
+$font-color-special: #1df1ff;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @import "./general";
+@import "./header";
+@import "./navigation";
+@import "./main";
