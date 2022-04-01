@@ -1,0 +1,32 @@
+/*-----------------------------
+    HEADER
+-----------------------------*/
+.header {
+  height: 7vh;
+  min-height: 45px;
+  width: 100%;
+  background-color: $background-color-dark;
+  //   box-shadow: 30px 2px 1px rgb(189, 3, 3);
+
+  @include flex-center;
+}
+
+.company-icon-container {
+  @include flex-center;
+  margin-right: 10px;
+
+  img {
+    height: 34px;
+    width: 34px;
+  }
+}
+
+.headline-title {
+  margin-left: 10px;
+  color: $font-color-standard;
+  letter-spacing: 1px;
+  span {
+    font-weight: bold;
+    color: $font-color-special;
+  }
+}
