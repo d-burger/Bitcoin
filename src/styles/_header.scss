@@ -3,11 +3,10 @@
 -----------------------------*/
 .header {
   height: 7vh;
-  min-height: 45px;
+  min-height: 60px;
   width: 100%;
   background-color: $background-color-dark;
-  //   box-shadow: 30px 2px 1px rgb(189, 3, 3);
-
+  border-bottom: 2px solid rgb(63, 63, 63);
   @include flex-center;
 }
 
@@ -16,12 +15,13 @@
   margin-right: 10px;
 
   img {
-    height: 34px;
-    width: 34px;
+    height: 40px;
+    width: 40px;
   }
 }
 
 .headline-title {
+  font-size: 25px;
   margin-left: 10px;
   color: $font-color-standard;
   letter-spacing: 1px;
