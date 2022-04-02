@@ -4,4 +4,58 @@
 .main {
   background-color: $background-color-bright;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-row {
+  height: 40%;
+  display: flex;
+  //   align-items: center;
+}
+
+.single-price-container,
+.currencies-container {
+  background-color: $background-color-dark;
+}
+
+.single-price-container {
+  width: 500px;
+  margin: 50px 25px 25px 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.info-icon-main {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.single-price-value {
+  font-size: 30px;
+  font-weight: bold;
+  color: $font-color-special;
+}
+
+.currencies-container {
+  flex-grow: 1;
+  margin: 50px 50px 25px 25px;
+}
+
+.tall-row {
+  flex-grow: 1;
+  display: flex;
+  //   justify-content: center;
+}
+
+.price-chart-container {
+  background-color: $background-color-dark;
+  //   flex-grow: 1;
+  margin: 25px 50px 50px 50px;
+  width: 900px;
 }
