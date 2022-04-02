@@ -1,5 +1,5 @@
 /*-----------------------------
-    MAIN
+    DASHBOARD
 -----------------------------*/
 .main {
   background-color: $background-color-bright;
@@ -11,7 +11,6 @@
 .small-row {
   height: 40%;
   display: flex;
-  //   align-items: center;
 }
 
 .single-price-container,
@@ -45,17 +44,44 @@
 .currencies-container {
   flex-grow: 1;
   margin: 50px 50px 25px 25px;
+  padding: 40px 100px 40px 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .tall-row {
   flex-grow: 1;
   display: flex;
-  //   justify-content: center;
+}
+
+.currency-titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.scroll-container {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 85%;
+}
+
+.currency-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currency-element {
+  width: 33.33%;
+  width: calc(100% / 3);
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .price-chart-container {
   background-color: $background-color-dark;
-  //   flex-grow: 1;
   margin: 25px 50px 50px 50px;
   width: 900px;
 }

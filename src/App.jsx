@@ -8,7 +8,6 @@ import Dashboard from "./components/Dashboard";
 
 const App = () => {
   //-------- USESTATE ------------------------
-  const [searchStarted, setSearchStarted] = useState(false);
   const [currencies, setCurrencies] = useState([]);
 
   //-------- USEEFFECT -----------------------
@@ -24,12 +23,10 @@ const App = () => {
       let helperArr = [];
 
       for (const key in data) {
-        let helpObject = { [key]: data[key] };
+        let helpObject = { data_element: data[key] };
         helperArr.push(helpObject);
       }
-
       setCurrencies(helperArr);
-      setSearchStarted(true);
     } catch (error) {
       console.error(error);
     }

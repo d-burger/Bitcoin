@@ -26,6 +26,10 @@ a {
   min-height: 500px;
 }
 
+.special-font-color {
+  color: #1df1ff;
+}
+
 /*-----------------------------
     HEADER
 -----------------------------*/
@@ -144,7 +148,7 @@ a {
 }
 
 /*-----------------------------
-    MAIN
+    DASHBOARD
 -----------------------------*/
 .main {
   background-color: #535859;
@@ -209,6 +213,14 @@ a {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 50px 50px 25px 25px;
+  padding: 40px 100px 40px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .tall-row {
@@ -218,6 +230,46 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.currency-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 20px;
+}
+
+.scroll-container {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 85%;
+}
+
+.currency-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.currency-element {
+  width: 33.33%;
+  width: calc(100% / 3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .price-chart-container {
