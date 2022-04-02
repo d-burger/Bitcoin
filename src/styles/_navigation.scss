@@ -4,6 +4,41 @@
 
 .navigation {
   background-color: $background-color-dark;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  width: 140px;
+.profile-container {
+  height: 30%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.profile-picture {
+  width: 110px;
+  height: 110px;
+}
+
+.profile-name {
+  margin-top: 20px;
+}
+
+.option-links {
+  margin-top: 40px;
+}
+
+.nav-link {
+  @include flex-center;
+  justify-content: flex-start;
+  padding: 13px 0 13px 0;
+  // margin-left: 13px;
+}
+
+.nav-link-text {
+  margin-left: 10px;
 }
