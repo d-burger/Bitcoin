@@ -1,10 +1,15 @@
 import React from "react";
 import "./styles/app.scss";
+import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import Dashboard from "./components/Dashboard";
+import Details from "./components/Details";
+import Calculator from "./components/Calculator";
+import Diagram from "./components/Diagram";
+import MyBitcoin from "./components/MyBitcoin";
 
 const App = () => {
   //-------- USESTATE ------------------------
@@ -66,7 +71,21 @@ const App = () => {
       <Header />
       <div className="navigation-main-split">
         <Navigation />
-        <Dashboard currencies={currencies} pricesOneWeek={pricesOneWeek} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Dashboard
+                currencies={currencies}
+                pricesOneWeek={pricesOneWeek}
+              />
+            }
+          />
+          <Route path="/details" element={<Details />} />
+          <Route path="/umrechner" element={<Calculator />} />
+          <Route path="/diagramm" element={<Diagram />} />
+          <Route path="/meine-bitcoin" element={<MyBitcoin />} />
+        </Routes>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import profilePicture from "../images/ProfilePicture.png";
 import Logout from "../images/Logout.svg";
 import Info from "../images/Info.svg";
@@ -18,33 +19,33 @@ const Navigation = () => {
         <ul className="main-links">
           <li className="nav-link">
             <img src={Tacho} alt="" />
-            <a href="#" className="nav-link-text">
+            <Link to="/" className="nav-link-text">
               Dashboard
-            </a>
+            </Link>
           </li>
           <li className="nav-link">
             <img src={Info} alt="" />
-            <a href="#" className="nav-link-text">
+            <Link to="/details" className="nav-link-text">
               Detailansicht
-            </a>
+            </Link>
           </li>
           <li className="nav-link">
             <img src={Calculator} alt="" />
-            <a href="#" className="nav-link-text">
+            <Link to="/umrechner" className="nav-link-text">
               Umrechner
-            </a>
+            </Link>
           </li>
           <li className="nav-link">
             <img src={Chart} alt="" />
-            <a href="#" className="nav-link-text">
+            <Link to="/diagramm" className="nav-link-text">
               Diagramm
-            </a>
+            </Link>
           </li>
           <li className="nav-link">
             <img src={Bitcoin} alt="" />
-            <a href="#" className="nav-link-text">
+            <Link to="/meine-bitcoin" className="nav-link-text">
               Meine Bitcoin
-            </a>
+            </Link>
           </li>
         </ul>
         <ul className="option-links">
