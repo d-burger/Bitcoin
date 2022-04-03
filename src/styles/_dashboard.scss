@@ -31,8 +31,8 @@
 
 .info-icon-main {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 10px;
+  top: 10px;
 }
 
 .single-price-value {
@@ -47,11 +47,6 @@
   padding: 40px 100px 40px 100px;
   display: flex;
   flex-direction: column;
-}
-
-.tall-row {
-  flex-grow: 1;
-  display: flex;
 }
 
 .currency-titles {
@@ -80,8 +75,42 @@
   margin-bottom: 15px;
 }
 
+.tall-row {
+  flex-grow: 1;
+  display: flex;
+}
 .price-chart-container {
   background-color: $background-color-dark;
-  margin: 25px 50px 50px 50px;
+  margin: 25px 25px 50px 50px;
   width: 900px;
+}
+
+.bitcoin-overview-container {
+  background-color: $background-color-dark;
+  margin: 25px 50px 50px 25px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-wallet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto 0 auto 0;
+  height: 100%;
+}
+
+.dashboard-wallet-values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equal-sign {
+  margin: 30px;
+  font-size: 30px;
+  font-weight: bold;
 }

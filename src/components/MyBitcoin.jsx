@@ -5,8 +5,6 @@ import Bitcoin from "../images/Bitcoin.svg";
 const MyBitcoin = ({
   wallet,
   setWallet,
-  bitcoin,
-  setBitcoin,
   history,
   setHistory,
   newWalletValue,

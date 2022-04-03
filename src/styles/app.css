@@ -30,6 +30,31 @@ a {
   color: #1df1ff;
 }
 
+.btn {
+  background-color: #282e2f;
+  border: 1px solid #535859;
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #1df1ff;
+}
+
+input {
+  background-color: #282e2f;
+  height: 35px;
+  border: 2px solid #eeeeee;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 18px;
+}
+
 /*-----------------------------
     HEADER
 -----------------------------*/
@@ -198,8 +223,8 @@ a {
 
 .info-icon-main {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 10px;
+  top: 10px;
 }
 
 .single-price-value {
@@ -221,15 +246,6 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.tall-row {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .currency-titles {
@@ -272,10 +288,71 @@ a {
   margin-bottom: 15px;
 }
 
+.tall-row {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .price-chart-container {
   background-color: #282e2f;
-  margin: 25px 50px 50px 50px;
+  margin: 25px 25px 50px 50px;
   width: 900px;
+}
+
+.bitcoin-overview-container {
+  background-color: #282e2f;
+  margin: 25px 50px 50px 25px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-wallet-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto 0 auto 0;
+  height: 100%;
+}
+
+.dashboard-wallet-values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.equal-sign {
+  margin: 30px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /*-----------------------------
@@ -445,4 +522,8 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+/*-----------------------------
+    DIAGRAM
+-----------------------------*/
 /*# sourceMappingURL=app.css.map */

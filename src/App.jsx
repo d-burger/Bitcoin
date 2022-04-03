@@ -17,7 +17,6 @@ const App = () => {
   const [pricesOneWeek, setPricesOneWeek] = useState([]);
 
   const [wallet, setWallet] = useState(0);
-  const [bitcoin, setBitcoin] = useState(0);
   const [history, setHistory] = useState([]);
   const [newWalletValue, setNewWalletValue] = useState();
 
@@ -82,6 +81,8 @@ const App = () => {
               <Dashboard
                 currencies={currencies}
                 pricesOneWeek={pricesOneWeek}
+                wallet={wallet}
+                setWallet={setWallet}
               />
             }
           />
@@ -90,15 +91,16 @@ const App = () => {
             path="/umrechner"
             element={<Calculator currencies={currencies} />}
           />
-          <Route path="/diagramm" element={<Diagram />} />
+          <Route
+            path="/diagramm"
+            element={<Diagram pricesOneWeek={pricesOneWeek} />}
+          />
           <Route
             path="/meine-bitcoin"
             element={
               <MyBitcoin
                 wallet={wallet}
                 setWallet={setWallet}
-                bitcoin={bitcoin}
-                setBitcoin={setBitcoin}
                 history={history}
                 setHistory={setHistory}
                 newWalletValue={newWalletValue}
