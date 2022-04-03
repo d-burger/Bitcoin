@@ -1,0 +1,21 @@
+/*-----------------------------
+    MY BITCOIN
+-----------------------------*/
+.investment-container {
+  background-color: $background-color-dark;
+  width: 500px;
+  margin: 50px 25px 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.investment select {
+  background-color: $background-color-dark;
+}
+
+.investment input {
+  background-color: $background-color-dark;
+}

@@ -7,7 +7,7 @@ const Calculator = ({ currencies }) => {
   const [optionValue, setOptionValue] = useState();
 
   //-------- USEEFFECT -----------------------
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   //-------- FUNCTIONS -----------------------
   const inputHandler = (e) => {

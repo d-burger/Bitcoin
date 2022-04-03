@@ -277,4 +277,66 @@ a {
   margin: 25px 50px 50px 50px;
   width: 900px;
 }
+
+/*-----------------------------
+    CALCULATOR
+-----------------------------*/
+.calculate-container {
+  background-color: #282e2f;
+  width: 500px;
+  margin: 50px 25px 25px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px;
+}
+
+.calculation select {
+  background-color: #282e2f;
+}
+
+.calculation input {
+  background-color: #282e2f;
+}
+
+/*-----------------------------
+    MY BITCOIN
+-----------------------------*/
+.investment-container {
+  background-color: #282e2f;
+  width: 500px;
+  margin: 50px 25px 25px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px;
+}
+
+.investment select {
+  background-color: #282e2f;
+}
+
+.investment input {
+  background-color: #282e2f;
+}
 /*# sourceMappingURL=app.css.map */
