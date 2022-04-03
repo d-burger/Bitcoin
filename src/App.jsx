@@ -9,10 +9,12 @@ import Dashboard from "./components/Dashboard";
 const App = () => {
   //-------- USESTATE ------------------------
   const [currencies, setCurrencies] = useState([]);
+  const [pricesOneWeek, setPricesOneWeek] = useState([]);
 
   //-------- USEEFFECT -----------------------
   useEffect(() => {
     getCurrencies();
+    getPricesOneWeek();
   }, []);
 
   //-------- FUNCTIONS -----------------------
@@ -31,12 +33,40 @@ const App = () => {
       console.error(error);
     }
   };
+
+  const getPricesOneWeek = async () => {
+    try {
+      const {
+        data: { values },
+      } = await axios.get(
+        "https://api.blockchain.info/charts/market-price?timespan=7days&format=json&cors=true"
+      );
+
+      let helperArr = [];
+      values.map((value) => {
+        helperArr.push({
+          x:
+            new Date(value.x * 1000).getDate() +
+            "/" +
+            (new Date(value.x * 1000).getMonth() + 1) +
+            "/" +
+            new Date(value.x * 1000).getFullYear(),
+          y: value.y,
+        });
+      });
+
+      setPricesOneWeek(helperArr);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="App">
       <Header />
       <div className="navigation-main-split">
         <Navigation />
-        <Dashboard currencies={currencies} />
+        <Dashboard currencies={currencies} pricesOneWeek={pricesOneWeek} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import Info from "../images/Info.svg";
+import { Line } from "react-chartjs-2";
 
-const Dashboard = ({ currencies }) => {
+const Dashboard = ({ currencies, pricesOneWeek }) => {
   return (
     <div className="main">
       <div className="small-row">
@@ -49,7 +50,44 @@ const Dashboard = ({ currencies }) => {
       </div>
       <div className="tall-row">
         {/* PRICE CHART -----------------------------------*/}
-        <div className="price-chart-container">Nice</div>
+        <div className="price-chart-container">
+          <div className="chart">
+            <Line
+              data={{
+                labels: pricesOneWeek.map((element) => element.x),
+
+                datasets: [
+                  {
+                    label: "USD For One Bitcoin",
+                    data: pricesOneWeek.map((element) => element.y),
+                    // backgroundColor: [],
+                    fill: false,
+                    borderColor: ["rgba(29, 241, 255, 1)"],
+                    borderWidth: 3,
+                    color: ["rgba(255, 255, 255, 1)"],
+                  },
+                ],
+              }}
+              options={{
+                elements: {
+                  line: {
+                    tension: 0,
+                  },
+                },
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        beginAtZero: false,
+                      },
+                    },
+                  ],
+                },
+              }}
+              responsive={true}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
