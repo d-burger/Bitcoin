@@ -1,5 +1,6 @@
 import Info from "../images/Info.svg";
 import { Line } from "react-chartjs-2";
+import getSymbolFromCurrency from "currency-symbol-map";
 
 const Dashboard = ({ currencies, pricesOneWeek }) => {
   return (
@@ -37,10 +38,12 @@ const Dashboard = ({ currencies, pricesOneWeek }) => {
                     {currency.data_element.symbol}
                   </div>
                   <div className="currency-element special-font-color">
-                    {currency.data_element.buy}
+                    {currency.data_element.buy}{" "}
+                    {getSymbolFromCurrency(currency.data_element.symbol)}
                   </div>
                   <div className="currency-element special-font-color">
-                    {currency.data_element.sell}
+                    {currency.data_element.sell}{" "}
+                    {getSymbolFromCurrency(currency.data_element.symbol)}
                   </div>
                 </div>
               );

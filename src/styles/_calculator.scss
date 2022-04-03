@@ -1,0 +1,24 @@
+/*-----------------------------
+    CALCULATOR
+-----------------------------*/
+.calculate-container {
+  background-color: $background-color-dark;
+  width: 500px;
+  margin: 50px 25px 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.calculation {
+}
+
+.calculation select {
+  background-color: $background-color-dark;
+}
+
+.calculation input {
+  background-color: $background-color-dark;
+}

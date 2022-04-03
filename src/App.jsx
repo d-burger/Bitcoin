@@ -82,7 +82,10 @@ const App = () => {
             }
           />
           <Route path="/details" element={<Details />} />
-          <Route path="/umrechner" element={<Calculator />} />
+          <Route
+            path="/umrechner"
+            element={<Calculator currencies={currencies} />}
+          />
           <Route path="/diagramm" element={<Diagram />} />
           <Route path="/meine-bitcoin" element={<MyBitcoin />} />
         </Routes>
