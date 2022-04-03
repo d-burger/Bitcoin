@@ -1,5 +1,5 @@
 const Diagram = () => {
-  return <div className="Details">Diagram</div>;
+  return <div className="main">Diagram</div>;
 };
 
 export default Diagram;

@@ -1,5 +1,5 @@
 const MyBitcoin = () => {
-  return <div className="Details">MyBitcoin</div>;
+  return <div className="main">MyBitcoin</div>;
 };
 
 export default MyBitcoin;
