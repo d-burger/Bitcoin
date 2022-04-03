@@ -4,18 +4,71 @@ import Bitcoin from "../images/Bitcoin.svg";
 
 const MyBitcoin = () => {
   //-------- USESTATE ------------------------
-  const [wallet, setWallet] = useState(500000);
+  const [wallet, setWallet] = useState(0);
   const [bitcoin, setBitcoin] = useState(2.8);
   const [history, setHistory] = useState([]);
   const [newWalletValue, setNewWalletValue] = useState();
 
+  //-------- USEEFFECT -----------------------
+  // Run once
+  useEffect(() => {
+    getLocal();
+  }, []);
+
+  useEffect(() => {
+    saveToLocal();
+  }, [history]);
+
   //-------- FUNCTIONS -----------------------
+  // Save to local
+  const saveToLocal = () => {
+    localStorage.setItem("wallet", JSON.stringify(wallet));
+    localStorage.setItem("history", JSON.stringify(history));
+  };
+
+  // Get from local
+  const getLocal = () => {
+    if (localStorage.getItem("wallet") === null) {
+      localStorage.setItem("wallet", JSON.stringify());
+    } else {
+      let walletFromLocal = JSON.parse(localStorage.getItem("wallet"));
+      setWallet(Number(walletFromLocal));
+    }
+    if (localStorage.getItem("history") === null) {
+      localStorage.setItem("history", JSON.stringify());
+    } else {
+      let historyFromLocal = JSON.parse(localStorage.getItem("history"));
+      setHistory(historyFromLocal);
+    }
+  };
+
+  const addToHistory = () => {
+    let today = new Date();
+    let date =
+      today.getDate() +
+      "/" +
+      (today.getMonth() + 1) +
+      "/" +
+      today.getFullYear() +
+      ": " +
+      today.getHours() +
+      ":" +
+      today.getMinutes() +
+      ":" +
+      today.getSeconds();
+    setHistory((prevArray) => [
+      { date: date, value: newWalletValue },
+      ...prevArray,
+    ]);
+  };
+
   const inputValueHandler = (e) => {
     setNewWalletValue(Number(e.target.value));
   };
 
   const changeWallet = () => {
     setWallet(newWalletValue);
+    addToHistory();
     setNewWalletValue("");
   };
 
@@ -50,7 +103,7 @@ const MyBitcoin = () => {
             </div>
             <div className="edit-container">
               <input
-                placeholder="... neuer Kontostand"
+                placeholder="... Kontostand ändern"
                 onChange={inputValueHandler}
                 onKeyPress={handleKeypress}
                 value={newWalletValue}
@@ -65,36 +118,16 @@ const MyBitcoin = () => {
             <div className="history-container">
               <div className="history-title">Verlauf</div>
               <div className="history-values">
-                <div className="history-value-row">
-                  <div className="date">01.04.2022</div>
-                  <div className="wallet-change special-font-color">
-                    € 40000
-                  </div>
-                </div>
-                <div className="history-value-row">
-                  <div className="date">01.04.2022</div>
-                  <div className="wallet-change special-font-color">
-                    € 40000
-                  </div>
-                </div>
-                <div className="history-value-row">
-                  <div className="date">01.04.2022</div>
-                  <div className="wallet-change special-font-color">
-                    € 40000
-                  </div>
-                </div>
-                <div className="history-value-row">
-                  <div className="date">01.04.2022</div>
-                  <div className="wallet-change special-font-color">
-                    € 40000
-                  </div>
-                </div>
-                <div className="history-value-row">
-                  <div className="date">01.04.2022</div>
-                  <div className="wallet-change special-font-color">
-                    € 40000
-                  </div>
-                </div>
+                {history.map((el) => {
+                  return (
+                    <div className="history-value-row">
+                      <div className="date">{el.date}</div>
+                      <div className="wallet-change special-font-color">
+                        € {el.value}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

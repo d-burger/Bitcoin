@@ -429,8 +429,9 @@ a {
   display: -ms-flexbox;
   display: flex;
   margin: 10px;
-  width: 400px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  width: 330px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=app.css.map */
