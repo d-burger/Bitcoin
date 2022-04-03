@@ -314,7 +314,8 @@ a {
 -----------------------------*/
 .investment-container {
   background-color: #282e2f;
-  width: 500px;
+  width: 650px;
+  height: 500px;
   margin: 50px 25px 25px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -338,5 +339,98 @@ a {
 
 .investment input {
   background-color: #282e2f;
+}
+
+.wallet-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.wallet-values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+
+.wallet-value {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.wallet-bitcoin-icon {
+  height: 24px;
+}
+
+.separation {
+  font-weight: bold;
+}
+
+.edit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-icon {
+  width: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.history-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 180px;
+  border: 2px solid #535859;
+  padding: 10px 20px 10px 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.history-title {
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.history-value-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  width: 400px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 /*# sourceMappingURL=app.css.map */
