@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import Edit from "../images/Edit.svg";
 import Bitcoin from "../images/Bitcoin.svg";
 
-const MyBitcoin = () => {
-  //-------- USESTATE ------------------------
-  const [wallet, setWallet] = useState(0);
-  const [bitcoin, setBitcoin] = useState(2.8);
-  const [history, setHistory] = useState([]);
-  const [newWalletValue, setNewWalletValue] = useState();
-
+const MyBitcoin = ({
+  wallet,
+  setWallet,
+  bitcoin,
+  setBitcoin,
+  history,
+  setHistory,
+  newWalletValue,
+  setNewWalletValue,
+  currencies,
+}) => {
   //-------- USEEFFECT -----------------------
   // Run once
   useEffect(() => {
@@ -97,7 +101,18 @@ const MyBitcoin = () => {
                     className="wallet-bitcoin-icon"
                     alt=""
                   />{" "}
-                  {bitcoin}
+                  {currencies.map((el) => {
+                    if (el.data_element.symbol === "EUR") {
+                      return (
+                        <div className="bitcoin-value">
+                          {Math.round(
+                            (wallet / el.data_element.last + Number.EPSILON) *
+                              100
+                          ) / 100}
+                        </div>
+                      );
+                    }
+                  })}
                 </div>
               </div>
             </div>

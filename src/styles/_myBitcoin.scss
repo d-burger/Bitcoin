@@ -38,10 +38,17 @@
 .wallet-value {
   font-size: 30px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.bitcoin-value {
+  color: $font-color-special;
 }
 
 .wallet-bitcoin-icon {
   height: 24px;
+  margin-right: 10px;
 }
 
 .separation {

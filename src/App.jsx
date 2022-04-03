@@ -16,6 +16,11 @@ const App = () => {
   const [currencies, setCurrencies] = useState([]);
   const [pricesOneWeek, setPricesOneWeek] = useState([]);
 
+  const [wallet, setWallet] = useState(0);
+  const [bitcoin, setBitcoin] = useState(0);
+  const [history, setHistory] = useState([]);
+  const [newWalletValue, setNewWalletValue] = useState();
+
   //-------- USEEFFECT -----------------------
   useEffect(() => {
     getCurrencies();
@@ -26,9 +31,8 @@ const App = () => {
   const getCurrencies = async () => {
     try {
       const { data } = await axios.get("https://blockchain.info/ticker");
-      console.log(data);
-      let helperArr = [];
 
+      let helperArr = [];
       for (const key in data) {
         let helpObject = { data_element: data[key] };
         helperArr.push(helpObject);
@@ -87,7 +91,22 @@ const App = () => {
             element={<Calculator currencies={currencies} />}
           />
           <Route path="/diagramm" element={<Diagram />} />
-          <Route path="/meine-bitcoin" element={<MyBitcoin />} />
+          <Route
+            path="/meine-bitcoin"
+            element={
+              <MyBitcoin
+                wallet={wallet}
+                setWallet={setWallet}
+                bitcoin={bitcoin}
+                setBitcoin={setBitcoin}
+                history={history}
+                setHistory={setHistory}
+                newWalletValue={newWalletValue}
+                setNewWalletValue={setNewWalletValue}
+                currencies={currencies}
+              />
+            }
+          />
         </Routes>
       </div>
     </div>
