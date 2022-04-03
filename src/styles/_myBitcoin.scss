@@ -3,7 +3,8 @@
 -----------------------------*/
 .investment-container {
   background-color: $background-color-dark;
-  width: 500px;
+  width: 650px;
+  height: 500px;
   margin: 50px 25px 25px 50px;
   display: flex;
   flex-direction: column;
@@ -18,4 +19,69 @@
 
 .investment input {
   background-color: $background-color-dark;
+}
+
+.wallet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.wallet-values {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.wallet-value {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.wallet-bitcoin-icon {
+  height: 24px;
+}
+
+.separation {
+  font-weight: bold;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-icon {
+  width: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 180px;
+  border: 2px solid #535859;
+  padding: 10px 20px 10px 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.history-title {
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.history-value-row {
+  display: flex;
+  margin: 10px;
+  width: 400px;
+  justify-content: space-around;
 }
