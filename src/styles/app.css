@@ -74,7 +74,7 @@ select {
   min-height: 60px;
   width: 100%;
   background-color: #282e2f;
-  border-bottom: 2px solid #3f3f3f;
+  border-bottom: 3px solid rgba(31, 31, 31, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -574,5 +574,30 @@ select {
 .price-chart-header button {
   font-size: 16px;
   width: 200px;
+}
+
+/*-----------------------------
+    DETAILS
+-----------------------------*/
+.details-container {
+  width: 500px;
+  height: 400px;
+  margin: 50px 25px 25px 50px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px;
+  background-color: #282e2f;
 }
 /*# sourceMappingURL=app.css.map */

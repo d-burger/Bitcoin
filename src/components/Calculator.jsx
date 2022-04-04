@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getSymbolFromCurrency from "currency-symbol-map";
 import Bitcoin from "../images/Bitcoin.svg";
+import { v4 as uuidv4 } from "uuid";
 
 const Calculator = ({
   currencies,
@@ -40,7 +41,7 @@ const Calculator = ({
                   el.data_element.symbol === "GBP"
                 ) {
                   return (
-                    <option value={el.data_element.last}>
+                    <option key={uuidv4()} value={el.data_element.last}>
                       {getSymbolFromCurrency(el.data_element.symbol)}{" "}
                       {el.data_element.symbol}
                     </option>

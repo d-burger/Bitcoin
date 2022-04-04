@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Bitcoin from "../images/Bitcoin.svg";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const BitcoinOverview = ({ currencies, wallet, setWallet }) => {
   //-------- USEEFFECT -----------------------
@@ -34,7 +35,7 @@ const BitcoinOverview = ({ currencies, wallet, setWallet }) => {
             {currencies.map((el) => {
               if (el.data_element.symbol === "EUR") {
                 return (
-                  <div className="bitcoin-value">
+                  <div key={uuidv4()} className="bitcoin-value">
                     {Math.round(
                       (wallet / el.data_element.last + Number.EPSILON) * 100
                     ) / 100}
