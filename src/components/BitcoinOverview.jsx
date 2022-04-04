@@ -24,7 +24,7 @@ const BitcoinOverview = ({ currencies, wallet, setWallet }) => {
     <div className="bitcoin-overview-container">
       <div class="dashboard-wallet-container">
         {" "}
-        <div className="dashboard-wallet-description">Dein Investment</div>
+        <div className="dashboard-wallet-description">Kontostand</div>
         <div className="dashboard-wallet-values">
           <div className="wallet-value special-font-color">€ {wallet}</div>
           <div className="equal-sign">=</div>

@@ -18,6 +18,13 @@ a {
   text-decoration: none;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 .navigation-main-split {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,10 +56,14 @@ a {
 input {
   background-color: #282e2f;
   height: 35px;
-  border: 2px solid #eeeeee;
+  border: 2px solid #1df1ff;
   color: #eeeeee;
   text-align: center;
   font-size: 18px;
+}
+
+select {
+  height: 35px;
 }
 
 /*-----------------------------
@@ -121,6 +132,7 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 830px;
 }
 
 .profile-container {
@@ -187,6 +199,7 @@ input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 830px;
 }
 
 .small-row {
@@ -376,6 +389,13 @@ input {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 40px;
+  height: 400px;
+}
+
+.calculation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .calculation select {
@@ -384,6 +404,17 @@ input {
 
 .calculation input {
   background-color: #282e2f;
+}
+
+.conversion-result-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /*-----------------------------
@@ -526,4 +557,22 @@ input {
 /*-----------------------------
     DIAGRAM
 -----------------------------*/
+.price-chart-header {
+  padding: 30px 0 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  margin: auto;
+}
+
+.price-chart-header button {
+  font-size: 16px;
+  width: 200px;
+}
 /*# sourceMappingURL=app.css.map */

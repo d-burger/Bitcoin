@@ -87,7 +87,7 @@ const MyBitcoin = ({
           <div className="investment">
             <div class="wallet-container">
               {" "}
-              <div className="wallet-description">Investment</div>
+              <div className="wallet-description">Kontostand</div>
               <div className="wallet-values">
                 <div className="wallet-value special-font-color">
                   € {wallet}

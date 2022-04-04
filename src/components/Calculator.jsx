@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import getSymbolFromCurrency from "currency-symbol-map";
+import Bitcoin from "../images/Bitcoin.svg";
 
-const Calculator = ({ currencies }) => {
-  //-------- USESTATE ------------------------
-  const [valueForConversion, setValueForConversion] = useState();
-  const [optionValue, setOptionValue] = useState();
-
-  //-------- USEEFFECT -----------------------
-  // useEffect(() => {}, []);
-
+const Calculator = ({
+  currencies,
+  valueForConversion,
+  setValueForConversion,
+  optionValue,
+  setOptionValue,
+}) => {
   //-------- FUNCTIONS -----------------------
   const inputHandler = (e) => {
     setValueForConversion(parseInt(e.target.value));
@@ -28,6 +28,7 @@ const Calculator = ({ currencies }) => {
     <div className="main">
       <div className="small-row">
         <div className="calculate-container">
+          <div className="calculation-title">Betrag in Bitcoin umrechnen</div>
           <div className="calculation">
             <select onChange={optionHandler}>
               {currencies.map((el) => {
@@ -48,16 +49,33 @@ const Calculator = ({ currencies }) => {
               })}
             </select>
 
-            <input
-              placeholder="Hier Betrag eingeben ..."
-              onChange={inputHandler}
-            />
-            <button>Berechnen</button>
-            <button>Zurücksetzen</button>
+            <input placeholder="... Betrag eingeben" onChange={inputHandler} />
+          </div>
+          <div>entspricht</div>
+          <div className="conversion-result">
+            {" "}
+            {valueForConversion ? (
+              <div className="conversion-result-container">
+                <div>
+                  <img src={Bitcoin} className="wallet-bitcoin-icon" alt="" />
+                </div>
+                <div className="special-font-color">
+                  {Math.round(
+                    (valueForConversion / optionValue + Number.EPSILON) * 1000
+                  ) / 1000}
+                </div>
+              </div>
+            ) : (
+              <div className="conversion-result-container">
+                <div>
+                  <img src={Bitcoin} className="wallet-bitcoin-icon" alt="" />
+                </div>
+                <div className="special-font-color">0</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <div>{valueForConversion / optionValue}</div>
     </div>
   );
 };
