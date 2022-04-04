@@ -20,6 +20,7 @@ const App = () => {
   // Calculator
   const [valueForConversion, setValueForConversion] = useState();
   const [optionValue, setOptionValue] = useState();
+  const [defaultValue, setDefaultValue] = useState(false);
 
   // MyBitcoin
   const [wallet, setWallet] = useState(0);
@@ -36,10 +37,12 @@ const App = () => {
   // Save Default Value For Calculator
   useEffect(() => {
     try {
-      let obj = currencies.find((el) => el.data_element.symbol === "AUD");
-      console.log(obj);
-      let defaultValue = Number(obj.data_element.last);
-      setOptionValue(defaultValue);
+      if (!defaultValue) {
+        let obj = currencies.find((el) => el.data_element.symbol === "AUD");
+        let defaultValue = Number(obj.data_element.last);
+        setOptionValue(defaultValue);
+        setDefaultValue(true);
+      }
     } catch (error) {
       console.log("Currencies not saved yet.");
     }

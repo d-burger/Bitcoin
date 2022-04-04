@@ -37,7 +37,10 @@
   @include flex-center;
   justify-content: flex-start;
   padding: 13px 0 13px 0;
-  // margin-left: 13px;
+
+  img {
+    width: 25px;
+  }
 }
 
 .inactive-link {

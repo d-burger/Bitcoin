@@ -19,12 +19,6 @@ const Calculator = ({
     setOptionValue(e.target.value);
   };
 
-  const valueHandler = (currency) => {
-    console.log(currency);
-    let obj = currencies.find((o) => o.data_element.symbol === currency);
-    console.log(obj.data_element.last);
-  };
-
   return (
     <div className="main">
       <div className="small-row">
@@ -32,6 +26,9 @@ const Calculator = ({
           <div className="calculation-title">Betrag in Bitcoin umrechnen</div>
           <div className="calculation">
             <select onChange={optionHandler}>
+              <option value={""} selected disabled>
+                Auswählen
+              </option>
               {currencies.map((el) => {
                 if (
                   el.data_element.symbol === "USD" ||

@@ -180,6 +180,10 @@ select {
   padding: 13px 0 13px 0;
 }
 
+.nav-link img {
+  width: 25px;
+}
+
 .inactive-link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -348,6 +352,12 @@ select {
   background-color: #282e2f;
   margin: 25px 25px 50px 50px;
   width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .bitcoin-overview-container {
