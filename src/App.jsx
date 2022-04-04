@@ -15,7 +15,13 @@ const App = () => {
   //-------- USESTATE ------------------------
   const [currencies, setCurrencies] = useState([]);
   const [pricesOneWeek, setPricesOneWeek] = useState([]);
+  const [pricesEightWeeks, setPricesEightWeeks] = useState([]);
 
+  // Calculator
+  const [valueForConversion, setValueForConversion] = useState();
+  const [optionValue, setOptionValue] = useState();
+
+  // MyBitcoin
   const [wallet, setWallet] = useState(0);
   const [history, setHistory] = useState([]);
   const [newWalletValue, setNewWalletValue] = useState();
@@ -24,7 +30,20 @@ const App = () => {
   useEffect(() => {
     getCurrencies();
     getPricesOneWeek();
+    getPricesEightWeeks();
   }, []);
+
+  // Save Default Value For Calculator
+  useEffect(() => {
+    try {
+      let obj = currencies.find((el) => el.data_element.symbol === "AUD");
+      console.log(obj);
+      let defaultValue = Number(obj.data_element.last);
+      setOptionValue(defaultValue);
+    } catch (error) {
+      console.log("Currencies not saved yet.");
+    }
+  }, [currencies]);
 
   //-------- FUNCTIONS -----------------------
   const getCurrencies = async () => {
@@ -68,6 +87,32 @@ const App = () => {
       console.error(error);
     }
   };
+  const getPricesEightWeeks = async () => {
+    try {
+      const {
+        data: { values },
+      } = await axios.get(
+        "https://api.blockchain.info/charts/market-price?timespan=8weeks&format=json&cors=true"
+      );
+
+      let helperArr = [];
+      values.map((value) => {
+        helperArr.push({
+          x:
+            new Date(value.x * 1000).getDate() +
+            "/" +
+            (new Date(value.x * 1000).getMonth() + 1) +
+            "/" +
+            new Date(value.x * 1000).getFullYear(),
+          y: value.y,
+        });
+      });
+
+      setPricesEightWeeks(helperArr);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="App">
@@ -89,11 +134,24 @@ const App = () => {
           <Route path="/details" element={<Details />} />
           <Route
             path="/umrechner"
-            element={<Calculator currencies={currencies} />}
+            element={
+              <Calculator
+                currencies={currencies}
+                valueForConversion={valueForConversion}
+                setValueForConversion={setValueForConversion}
+                optionValue={optionValue}
+                setOptionValue={setOptionValue}
+              />
+            }
           />
           <Route
             path="/diagramm"
-            element={<Diagram pricesOneWeek={pricesOneWeek} />}
+            element={
+              <Diagram
+                pricesOneWeek={pricesOneWeek}
+                pricesEightWeeks={pricesEightWeeks}
+              />
+            }
           />
           <Route
             path="/meine-bitcoin"

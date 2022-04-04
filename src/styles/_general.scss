@@ -16,6 +16,13 @@ a {
   text-decoration: none;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 .navigation-main-split {
   display: flex;
   height: 93vh;
@@ -43,8 +50,12 @@ a {
 input {
   background-color: $background-color-dark;
   height: 35px;
-  border: 2px solid $font-color-standard;
+  border: 2px solid $font-color-special;
   color: $font-color-standard;
   text-align: center;
   font-size: 18px;
+}
+
+select {
+  height: 35px;
 }
