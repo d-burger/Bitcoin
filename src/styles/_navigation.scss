@@ -40,6 +40,31 @@
   // margin-left: 13px;
 }
 
-.nav-link-text {
-  margin-left: 10px;
+.inactive-link {
+  display: flex;
+  justify-content: flex-start;
+  padding: 13px 0 13px 40px;
+  color: $font-color-special;
+  width: 230px;
+
+  div {
+    margin-left: 15px;
+  }
+
+  a {
+    margin-left: 15px;
+  }
+}
+
+.active-link {
+  display: flex;
+  justify-content: flex-start;
+  padding: 13px 0 13px 40px;
+  color: $font-color-special;
+  background-color: #4c4c4c;
+  width: 230px;
+  div {
+    color: $font-color-special;
+    margin-left: 15px;
+  }
 }
