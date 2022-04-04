@@ -45,7 +45,16 @@ const Details = () => {
     <div className="main">
       <div className="details-container">
         <div className="details-title">Bitcoin Details</div>
-        <div className="details"></div>
+        <div className="details">
+          {details.map((detail) => {
+            return (
+              <div key={uuidv4()} className="detail">
+                <div className="detail-name">{detail.name}</div>
+                <div className="detail-value">{detail.value}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

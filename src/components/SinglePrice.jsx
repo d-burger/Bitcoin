@@ -1,5 +1,6 @@
 import Info from "../images/Info.svg";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 const SinglePrice = ({ currencies }) => {
   return (
@@ -9,10 +10,10 @@ const SinglePrice = ({ currencies }) => {
       </Link>
 
       <div className="single-price-title">Preis (USD)</div>
-      {currencies.map((currency, index) => {
+      {currencies.map((currency) => {
         if (currency.data_element.symbol === "USD") {
           return (
-            <div className="single-price-value" key={index}>
+            <div className="single-price-value" key={uuidv4()}>
               $ {currency.data_element.last}
             </div>
           );
